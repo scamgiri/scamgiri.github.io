@@ -1,1 +1,1 @@
-![Scamgiri Inc.](./a.png)
+![Scamgiri Inc.](./b.png)
