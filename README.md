@@ -1,1 +1,0 @@
-![Scamgiri Inc.](./b.png)
