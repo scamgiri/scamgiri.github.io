@@ -1,0 +1,118 @@
+/* last updated 4/10/22 */
+/*skin cards*/
+.skinCard, .noBtnCard, .skinCard.blackShad {
+    border-radius: 8px;
+    border-width: 0 !important;
+    background-color: rgba(15,15,15,0.15);
+    transition: all 0.5s ease;
+}
+
+[style="color:#292929;border:5px solid#292929"] {
+    color: var(--accent) !important;
+}
+
+.skinImg, .skinImgC {
+    position: relative;
+    top: 25px;
+    filter: grayscale(1) brightness(1);
+}
+
+.skinCard:hover, .skinCard.blackShad:hover, .noBtnCard.blackShad:hover {
+    color: #fff !important;
+    background-color: rgba(15,15,15,0.15);
+}
+
+.skinCard:hover img {
+    filter: grayscale(0);
+}
+
+.selctFavBtn.material-icons:after {
+    position: relative !important;
+    bottom: 3px !important;
+}
+
+.selctInfoBtn, .itemCnt::after {
+    background-color: var(--accent) !important;
+}
+
+.skinRandom.blackShad {
+    pointer-events: none;
+}
+
+.skinCard.blackShad {
+    text-shadow: none;
+}
+
+.itemSea, .itemOwn {
+    font-size: 0;
+}
+
+.sprayImg {
+    margin-left: 20px;
+    filter: grayscale(1);
+}
+
+.noBtnCard {
+    width: 145px;
+}
+
+.noBtnCard:hover:after {
+    height: 100%;
+}
+
+.noBtnCard:hover>.sprayImg {
+    filter: grayscale(0);
+}
+
+#slid_scopeBorderCol {
+    border-color: var(--accent);
+}
+
+/*class card*/
+.classCard {
+    background-color: rgba(0,0,0,0.4);
+    text-shadow: none;
+    border-radius: 8px;
+    height: 260px;
+    line-height: 20px;
+    font-size: 0;
+    transition: all 0.5s ease;
+}
+
+.classCard img {
+    filter: brightness(1) grayscale(1);
+}
+
+.classCard:hover {
+    height: 180px;
+    font-size: 28px;
+    transform: translateY(45px);
+}
+
+.classWeap {
+    font-size: 0;
+    height: 0;
+}
+
+.classImgC {
+    margin-top: 12px;
+    transition-duration: 0.25s;
+}
+
+.classCard:hover img {
+    opacity: unset;
+    transform: unset;
+    filter: grayscale(0);
+}
+
+.classXPBar {
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.25);
+    height: 5px;
+}
+
+.clsXPBarC {
+    border-radius: 10px;
+    background-color: var(--accent);
+    height: 5px;
+}
