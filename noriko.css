@@ -1,0 +1,3303 @@
+/* ========================================================================== */
+/* @name               Noriko Css                                             */
+/* @notes              Noriko Sonozaki themed css                             */
+/* @author             Scamgiri (drain#9466)                                  */
+/* @version            1.0                                                    */
+/* @functionality      Supports variables                                     */
+/* ========================================================================== */
+/*Section 0: Base*/
+/*variables*/
+:root {
+    --accent: #aec6cf;
+    --accent2: #557f90;
+    --accent3: #905562;
+    --bg: rgba(150, 150, 150, .2);
+    --altbg: rgba(150,150,150, .7);
+    --bgg: linear-gradient(0deg, var(--accent), transparent);
+    --bgg2: linear-gradient(180deg, var(--accent), transparent);
+}
+
+* {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/*font*/
+@font-face {
+    font-family: gamefont;
+    src: url(https://www.dl.dropboxusercontent.com/s/rn7ukriwwp8wufy/Spacia-Bold.ttf?dl=0)
+}
+
+/*ugly*/
+#rankedSoonTm, #braveWarning, #timerIcon, .material-icons[style='color:#fbc02d;font-size:42px;vertical-align:bottom'], .settingsBtn[style*='width:auto;background-color:#994cd1'], #streamContainer, .material-icons-outlined, #aHolder, .verticalSeparator, #faceItIconM, #seasonLabel, #voiceDisplay, .endAHolder, #onetrust-consent-sdk, .youNewDiv, #editorBtnM, .imageButton, #endAMerger {
+    display: none !important;
+}
+
+/*Section 1: Menu*/
+#mainLogo, #seasonLabel {
+    display: none;
+}
+
+#instructionHolder {
+    backdrop-filter: grayscale(1);
+}
+
+#instructionsUpdate {
+    background: var(--accent);
+    border: 2px solid #000;
+}
+
+.reportDC {
+    background: var(--accent3);
+}
+
+#instructionsUpdate a {
+    color: var(--accent2)
+}
+
+#instructionsUpdate div {
+    color: #000 !important;
+}
+
+#loadingBg {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(https://cdn.discordapp.com/attachments/798652989572120618/928859426008477726/download.png);
+    opacity: 0.5
+}
+
+.setBodH[style='padding-top:20px;padding-bottom:20px;'] {
+    background-color: rgba(0,0,0,.6)
+}
+
+/*shameless plug*/
+#instructions {
+    pointer-events: all;
+    transition: 0.5s;
+    animation: none;
+}
+
+#instructions:hover {
+    font-size: 36px;
+    color: #fff;
+}
+
+#instructions::after {
+    content: "css by scamgiri";
+    display: block;
+    font-size: 24px;
+    color: #fff;
+    visibility: hidden;
+}
+
+#instructions:hover:after {
+    transform: translateY(-60px);
+    visibility: visible;
+    transition: all 0.3s linear;
+}
+
+/*top right*/
+/*mail icon*/
+#mailIcon {
+    visibility: hidden;
+    transform: none !important;
+}
+
+#mailContainer {
+    display: block !important;
+    position: fixed;
+    background-color: transparent;
+    transition-duration: 0.5s;
+}
+
+#mailCount {
+    position: fixed;
+    right: 35px;
+    top: 10px;
+    background-color: transparent;
+    font-size: 25px;
+}
+
+#mailContainer:before {
+    content: ' ';
+    position: fixed;
+    top: 0;
+    right: 20px;
+    height: 70px;
+    width: 100px;
+    border: 3px solid #fff;
+    background: var(--bgg);
+    border-top: none;
+    border-left: none;
+    border-radius: 0;
+    transition-duration: 0.5s
+}
+
+#mailIcon:after {
+    visibility: visible !important;
+    content: 'mail';
+    font-family: 'Material-Icons';
+    font-size: 50px;
+    color: #fff;
+    position: fixed;
+    right: 16px;
+    top: 0;
+    bottom: unset;
+    width: 115px;
+    height: 80px;
+    transition-duration: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mailIcon:hover:after {
+    color: #fff
+}
+
+/*news thingy with the maps and stuff*/
+#newsStat, #newsHed {
+    display: none !important;
+}
+
+.newsIMG {
+    border-radius: 0;
+}
+
+#newsHolder {
+    position: fixed;
+    right: 127px;
+    top: 0;
+    height: 0;
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    transition-duration: 0.5s;
+}
+
+#newsBody::-webkit-scrollbar {
+    display: none;
+}
+
+#newsHolder:hover {
+    width: 360px;
+    height: 180px !important;
+}
+
+#newsHolder:before {
+    content: ' ';
+    background: var(--bgg);
+    position: fixed;
+    top: 0;
+    right: 121px;
+    height: 70px;
+    width: 100px;
+    border: 3px solid #fff;
+    border-radius: 0;
+    border-right: none;
+    border-top: none;
+    transition-duration: 0.5s
+}
+
+#newsHolder:after {
+    content: 'map';
+    font-family: 'Material-Icons';
+    font-size: 50px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    right: 113px;
+    width: 120px;
+    height: 80px;
+    transition-duration: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#newsHolder:hover:after {
+    transform: translateX(-250px) translateY(100px);
+    color: #fff;
+}
+
+#newsHolder:hover:before {
+    height: 200px;
+    width: 380px;
+    transform: translateY(-14px) translateX(1px);
+}
+
+#newsHolder:hover > #newsIMG {
+    transform: translateX(-6px)
+}
+
+#newsHolder:hover {
+    height: 400px;
+    cursor: pointer;
+}
+
+/*profile top left thing*/
+.accountInput {
+    color: #fff;
+}
+
+.button.lgn {
+    background-color: #0000!important;
+    box-shadow: none!important;
+    text-shadow: none;
+    padding-bottom: 10px!important
+}
+
+.button.lgn .material-icons {
+    display: none;
+}
+
+.accBtn0, .accBtn {
+    border: 3px solid #fff !important;
+    background: var(--bgg);
+}
+
+.button[onclick*='claimReward();'] {
+    background: var(--bgg);
+    text-shadow: none !important;
+}
+
+#referralHeader, .setBodH[style='margin-left:0px;width:calc(100% - 40px)'] {
+    background: var(--altbg);
+}
+
+.setBodH {
+    letter-spacing: 1px;
+}
+
+.buttonO.lgn {
+    position: fixed;
+    top: -5px;
+    background: var(--bgg);
+    border: 3px solid #fff !important;
+    border-top: none !important;
+    border-radius: 0 !important;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuWindow.dark {
+    border: 3px solid transparent;
+    border-image: var(--bgg) 1;
+    background: var(--bg)
+}
+
+.accountInput {
+    background: var(--bg)
+}
+
+.accountInput::placeholder {
+    color: #fff;
+}
+
+.setBodH #accResp {
+    color: #fff !important;
+    font-size: 26px !important;
+}
+
+.button.lgn .material-icons {
+    margin-bottom: -4px!important
+}
+
+.accountButton {
+    background-color: #0000
+}
+
+.krSocial {
+    display: none;
+}
+
+.headerBarLeft {
+    top: unset;
+    left: calc(50% - 170px);
+    background: #0000;
+    border-radius: 12px!important;
+    border-radius-right: 0 !important;
+}
+
+#signedInHeaderBar {
+    position: fixed;
+    top: 2px;
+    left: calc(50% - 150px);
+    background: var(--bgg);
+    border: 3px solid #fff;
+    border-top: none;
+    border-radius: 0 !important;
+    height: 90px;
+    width: 280px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#signedInHeaderBar div[style='display:inline-block;'] {
+    position: relative;
+    top: 20px;
+}
+
+#menuRegionLabel {
+    position: fixed;
+    top: -1px;
+    left: calc(50% + 182px);
+    padding: 15px;
+    background: var(--bgg);
+    border: 3px solid #fff;
+    border-left: none;
+    border-top: none;
+    width: 110px;
+    height: 1.52em;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.menuDebugInfo {
+    position: fixed;
+    top: 0;
+    left: calc(50% - 344px);
+    padding: 15px;
+    background: var(--bgg);
+    border: 3px solid #fff;
+    border-right: none;
+    border-top: none;
+    width: 110px;
+    border-radius: 0;
+}
+
+.headerBarRight .verticalSeparator {
+    display: none;
+}
+
+#headerRight {
+    background: #0000;
+}
+
+#menuMiniProfilePic {
+    border-radius: 0 !important;
+}
+
+#menuAccountUsername {
+    position: relative;
+    bottom: 5px;
+    right: 2px;
+    letter-spacing: 2px;
+}
+
+#menuAccountUsername:hover {
+    text-decoration: underline;
+}
+
+.krInfo {
+    position: relative;
+    top: 12px;
+    left: 2px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+#menuJNKCount {
+    position: relative;
+    top: 13px;
+}
+
+#menuKRCount span {
+    color: var(--accent) !important;
+    letter-spacing: 1px;
+}
+
+#menuJNKCount .material-icons {
+    color: var(--accent) !important;
+    font-size: 18px !important;
+    position: relative;
+    top: 3px !important;
+}
+
+#mLevelCont {
+    position: relative;
+    top: 100px;
+    left: 2.5px;
+    padding: 0;
+    margin: 0;
+    background: var(--bgg);
+    border: 3px solid #fff;
+    border-top: none;
+    border-radius: 0;
+}
+
+#menuRnkDisp {
+    filter: drop-shadow(2px 2px 0px #fff);
+}
+
+#mLevelContV:before {
+    content: 'Lvl ';
+    padding-left: 10px;
+}
+
+#menuLvlHold {
+    position: relative;
+    top: 5px;
+}
+
+/*progress bar!!*/
+.progressBar {
+    background: rgba(255,255,255,.12);
+    padding: 0;
+    border-radius: 4px;
+    height: 5px;
+}
+
+.progressBarInner {
+    background: #fff;
+    border-radius: 4px;
+}
+
+.xpBar {
+    height: 20px;
+    background-color: rgba(0, 0, 0, .12);
+    padding: 0;
+    border-radius: 8px;
+}
+
+.xpBarB {
+    background: var(--gradient90);
+    border-radius: 8px;
+}
+
+#menuLevelBar[style="width: 1%;"]:after {
+    content: 'Progress: 1%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 2%;"]:after {
+    content: 'Progress: 2%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 3%;"]:after {
+    content: 'Progress: 3%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 4%;"]:after {
+    content: 'Progress: 4%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 5%;"]:after {
+    content: 'Progress: 5%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 6%;"]:after {
+    content: 'Progress: 6%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 7%;"]:after {
+    content: 'Progress: 7%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 8%;"]:after {
+    content: 'Progress: 8%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 9%;"]:after {
+    content: 'Progress: 9%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 10%;"]:after {
+    content: 'Progress: 10%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 11%;"]:after {
+    content: 'Progress: 11%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 12%;"]:after {
+    content: 'Progress: 12%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 13%;"]:after {
+    content: 'Progress: 13%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 14%;"]:after {
+    content: 'Progress: 14%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 15%;"]:after {
+    content: 'Progress: 15%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 16%;"]:after {
+    content: 'Progress: 16%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 17%;"]:after {
+    content: 'Progress: 17%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 18%;"]:after {
+    content: 'Progress: 18%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 19%;"]:after {
+    content: 'Progress: 19%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 20%;"]:after {
+    content: 'Progress: 20%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 21%;"]:after {
+    content: 'Progress: 21%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 22%;"]:after {
+    content: 'Progress: 22%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 23%;"]:after {
+    content: 'Progress: 23%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 24%;"]:after {
+    content: 'Progress: 24%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 25%;"]:after {
+    content: 'Progress: 25%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 26%;"]:after {
+    content: 'Progress: 26%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 27%;"]:after {
+    content: 'Progress: 27%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 28%;"]:after {
+    content: 'Progress: 28%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 29%;"]:after {
+    content: 'Progress: 29%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 30%;"]:after {
+    content: 'Progress: 30%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 31%;"]:after {
+    content: 'Progress: 31%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 32%;"]:after {
+    content: 'Progress: 32%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 33%;"]:after {
+    content: 'Progress: 33%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 34%;"]:after {
+    content: 'Progress: 34%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 35%;"]:after {
+    content: 'Progress: 35%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 36%;"]:after {
+    content: 'Progress: 36%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 37%;"]:after {
+    content: 'Progress: 37%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 38%;"]:after {
+    content: 'Progress: 38%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 39%;"]:after {
+    content: 'Progress: 39%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 40%;"]:after {
+    content: 'Progress: 40%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 41%;"]:after {
+    content: 'Progress: 41%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 42%;"]:after {
+    content: 'Progress: 42%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 43%;"]:after {
+    content: 'Progress: 43%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 44%;"]:after {
+    content: 'Progress: 44%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 45%;"]:after {
+    content: 'Progress: 45%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 46%;"]:after {
+    content: 'Progress: 46%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 47%;"]:after {
+    content: 'Progress: 47%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 48%;"]:after {
+    content: 'Progress: 48%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 49%;"]:after {
+    content: 'Progress: 49%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 50%;"]:after {
+    content: 'Progress: 50%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 51%;"]:after {
+    content: 'Progress: 51%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 52%;"]:after {
+    content: 'Progress: 52%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 53%;"]:after {
+    content: 'Progress: 53%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 54%;"]:after {
+    content: 'Progress: 54%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 54%;"]:after {
+    content: 'Progress: 54%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 56%;"]:after {
+    content: 'Progress: 56%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 57%;"]:after {
+    content: 'Progress: 57%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 58%;"]:after {
+    content: 'Progress: 58%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 59%;"]:after {
+    content: 'Progress: 59%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 60%;"]:after {
+    content: 'Progress: 60%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 61%;"]:after {
+    content: 'Progress: 61%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 62%;"]:after {
+    content: 'Progress: 62%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 63%;"]:after {
+    content: 'Progress: 63%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 64%;"]:after {
+    content: 'Progress: 64%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 65%;"]:after {
+    content: 'Progress: 65%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 66%;"]:after {
+    content: 'Progress: 66%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 67%;"]:after {
+    content: 'Progress: 67%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 68%;"]:after {
+    content: 'Progress: 68%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 69%;"]:after {
+    content: 'Progress: 69%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 70%;"]:after {
+    content: 'Progress: 70%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 71%;"]:after {
+    content: 'Progress: 71%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 72%;"]:after {
+    content: 'Progress: 72%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 73%;"]:after {
+    content: 'Progress: 73%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 74%;"]:after {
+    content: 'Progress: 74%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 75%;"]:after {
+    content: 'Progress: 75%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 76%;"]:after {
+    content: 'Progress: 76%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 77%;"]:after {
+    content: 'Progress: 77%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 78%;"]:after {
+    content: 'Progress: 78%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 79%;"]:after {
+    content: 'Progress: 79%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 80%;"]:after {
+    content: 'Progress: 80%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 80%;"]:after {
+    content: 'Progress: 80%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 81%;"]:after {
+    content: 'Progress: 81%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 82%;"]:after {
+    content: 'Progress: 82%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 83%;"]:after {
+    content: 'Progress: 83%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 84%;"]:after {
+    content: 'Progress: 84%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 85%;"]:after {
+    content: 'Progress: 85%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 86%;"]:after {
+    content: 'Progress: 86%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 87%;"]:after {
+    content: 'Progress: 87%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 88%;"]:after {
+    content: 'Progress: 88%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 89%;"]:after {
+    content: 'Progress: 89%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 90%;"]:after {
+    content: 'Progress: 90%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 91%;"]:after {
+    content: 'Progress: 91%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 92%;"]:after {
+    content: 'Progress: 92%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 93%;"]:after {
+    content: 'Progress: 93%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 94%;"]:after {
+    content: 'Progress: 94%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 95%;"]:after {
+    content: 'Progress: 95%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 96%;"]:after {
+    content: 'Progress: 96%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 97%;"]:after {
+    content: 'Progress: 97%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 98%;"]:after {
+    content: 'Progress: 98%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 99%;"]:after {
+    content: 'Progress: 99%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+#menuLevelBar[style="width: 100%;"]:after {
+    content: 'Progress: 100%';
+    position: relative;
+    top: 45px;
+    left: 60px;
+    font-size: 22px;
+    color: #fff;
+}
+
+
+#menuPingText, #menuFPSDisplay, #menuFPS {
+    color: #fff !important;
+    font-size: 20px !important;
+    text-transform: lowercase;
+}
+
+#menuPingIcon {
+    display: none;
+}
+
+#menuFPSDisplay:after {
+    content: ' | ';
+}
+
+#menuPingText:after {
+    content: 'ms '
+}
+
+/*menu buttons*/
+.menuItem .menuItemTitle {
+    margin-top: 0;
+    color: #fff !important;
+    pointer-events: all;
+    transition: all .2s;
+}
+
+.menuItem {
+    width: 100px !important;
+    height: 70px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*profile button*/
+#menuBtnProfile {
+    visibility: hidden;
+    font-size: 0px !important;
+    height: 70px;
+}
+
+#menuBtnProfile:before {
+    visibility: visible;
+    content: 'manage_accounts';
+    font-size: 40px;
+    font-family: 'material-icons';
+    position: relative;
+    top: 15px;
+    left: 9px;
+}
+
+.menuItem[onclick*='showWindow(5)']:after {
+    content: '口座';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+    transition: all 0.2s linear;
+}
+
+/*shop button*/
+#menuBtnShop {
+    visibility: hidden;
+    font-size: 0px !important;
+}
+
+#menuBtnShop:before {
+    visibility: visible;
+    content: 'shopping_cart';
+    font-size: 40px;
+    font-family: 'material-icons';
+    position: relative;
+    top: 15px;
+    left: 7px;
+}
+
+.menuItem[onclick*='showWindow(14)']:after {
+    content: '店舗';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+    transition: all 0.2s linear;
+}
+
+/*challenges button*/
+#menuBtnChall {
+    visibility: hidden;
+    font-size: 0px!important;
+}
+
+#menuBtnChall:before {
+    visibility: visible;
+    content: 'sports_score';
+    font-size: 40px;
+    font-family: 'material-icons';
+    position: relative;
+    top: 15px;
+    left: 7px;
+}
+
+.menuItem[onclick*='windows[32].openHome()']:after {
+    content: '競作';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+    transition: all 0.2s linear;
+}
+
+/*social(hub) button*/
+#menuBtnSocial {
+    visibility: hidden;
+    font-size: 0px !important;
+}
+
+#menuBtnSocial:before {
+    visibility: visible;
+    content: 'language';
+    font-size: 40px;
+    font-family: 'material-icons';
+    position: relative;
+    top: 15px;
+    left: 2px;
+}
+
+.menuItem[onclick*="window.open('/social.html', '_blank')"]:after {
+    content: 'ハブ';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+    transition: all 0.2s linear;
+}
+
+/*maps(games) button*/
+#menuBtnMaps {
+    visibility: hidden;
+    font-size: 0px !important;
+}
+
+#menuBtnMaps:before {
+    visibility: visible;
+    content: 'map';
+    font-size: 40px;
+    font-family: 'material-icons';
+    position: relative;
+    top: 15px;
+    left: 3px;
+}
+
+.menuItem[onclick*='showGames()']:after {
+    content: 'ゲーム';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+    transition: all 0.2s linear;
+}
+
+/*mods button*/
+#menuBtnMods {
+    visibility: hidden;
+    font-size: 0px !important;
+}
+
+#menuBtnMods:before {
+    visibility: visible;
+    content: 'mode';
+    font-size: 40px;
+    font-family: 'material-icons';
+    position: relative;
+    top: 15px;
+    left: 3px;
+}
+
+.menuItem[onclick*='showWindow(4)']:after {
+    content: 'モッド';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+    transition: all 0.2s linear;
+}
+
+/*settings button*/
+#menuBtnSettings {
+    visibility: hidden;
+    font-size: 0px !important;
+}
+
+#menuBtnSettings:before {
+    visibility: visible;
+    content: 'settings_suggest';
+    font-size: 40px;
+    font-family: 'material-icons';
+    position: relative;
+    top: 15px;
+    left: 6px;
+}
+
+.menuItem[onclick*='showWindow(1)']:after {
+    content: 'ホスト';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+    transition: all 0.2s linear;
+}
+
+.menuItem[onclick*='showWindow(1)']:hover:after, .menuItem[onclick*='showWindow(4)']:hover:after, .menuItem[onclick*='showGames()']:hover:after, .menuItem[onclick*="window.open('/social.html', '_blank')"]:hover:after, .menuItem[onclick*='windows[32].openHome()']:hover:after, .menuItem[onclick*='showWindow(14)']:hover:after, .menuItem[onclick*='showWindow(5)']:hover:after {
+    opacity: 1;
+}
+
+.menuItem[onclick*="showWindow(1)"]:hover > #menuBtnSettings:before, .menuItem[onclick*="showWindow(4)"]:hover > #menuBtnMods:before, .menuItem[onclick*='showGames()']:hover > #menuBtnMaps:before, .menuItem[onclick*="window.open('/social.html', '_blank')"]:hover > #menuBtnSocial:before, .menuItem[onclick*='windows[32].openHome()']:hover > #menuBtnChall:before, .menuItem[onclick*='showWindow(14)']:hover > #menuBtnShop:before, .menuItem[onclick*='showWindow(5)']:hover > #menuBtnProfile:before {
+    position: relative;
+    top: 2px;
+    transition: all 0.2s linear;
+}
+
+/*dropdown stuff*/
+#subLogoButtons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 5em;
+    top: -71.02em;
+    pointer-events: all;
+    transform: scale(.95);
+    transition-duration: .2s;
+    background-color: #0000;
+    height: fit-content;
+    padding-left: 20px;
+}
+
+#menuItemContainer {
+    display: flex;
+    flex-direction: column;
+    left: 15px;
+    top: -71.254em !important;
+    pointer-events: all;
+    transform: scale(.95);
+    transition-duration: .2s;
+    background-color: #0000;
+    height: fit-content;
+}
+
+#subLogoButtons:hover {
+    top: -38px;
+}
+
+#menuItemContainer:hover {
+    top: -44px !important;
+}
+
+#subLogoButtons:before {
+    content: '↓';
+    color: #fff;
+    background: var(--bgg);
+    border-radius: 0;
+    position: fixed;
+    top: 1311px;
+    left: 21px;
+    font-size: 49px;
+    width: 100px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.15s;
+    border: 4px solid #fff;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    padding: 0;
+}
+
+#menuItemContainer:before {
+    content: '↓';
+    color: #fff;
+    background: var(--bgg);
+    border-radius: 0;
+    position: fixed;
+    top: 1310px;
+    font-size: 49px;
+    width: 100px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.15s;
+    border: 4px solid #fff;
+    border-radius: 0;
+    border-right: none;
+    border-top: none;
+}
+
+#subLogoButtons:after {
+    content: '';
+    position: fixed;
+    top: 1300px;
+    width: 8px;
+    padding-bottom: 666px;
+    padding-left: 100px;
+    position: relative;
+    top: unset;
+    opacity: 0 !important;
+}
+
+#menuItemContainer:after {
+    content: '';
+    position: fixed;
+    top: 1300px;
+    width: 8px;
+    padding-bottom: 666px;
+    padding-left: 100px;
+    position: relative;
+    top: unset;
+    opacity: 0 !important;
+}
+
+#subLogoButtons:hover:before, #menuItemContainer:hover:before {
+    opacity: 0;
+    border: none;
+    transform: translateY(-690px);
+}
+
+.button.small, .menuItem {
+    text-shadow: none!important;
+    box-shadow: none!important;
+    margin: 0;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    width: 95px;
+    height: 70px !important;
+    font-size: 18px !important;
+    text-shadow: none !important;
+    border: 3px solid #fff !important;
+    line-height: unset;
+    margin-top: 20px !important;
+}
+
+.button.small:hover, .menuItem:hover {
+    color: var(--accent);
+    transform: scale(0.88);
+}
+
+#menuBtnHost:hover:after, #menuBtnBrowser:hover:after, #menuBtnRanked:hover:after, #inviteButton:hover:after, #menuBtnJoin:hover:after {
+    opacity: 1;
+}
+
+#menuBtnHost, #menuBtnBrowser, #menuBtnRanked, #inviteButton, #menuBtnJoin {
+    font-size: 0 !important;
+    background: var(--bg) !important;
+}
+
+#menuBtnHost:before {
+    content: 'Host';
+    font-size: 24px;
+    margin-top: 16px;
+    transition: all 0.2s linear;
+}
+
+#menuBtnHost:hover:before {
+    margin-top: 6px;
+}
+
+#menuBtnBrowser:before {
+    content: 'Servers';
+    font-size: 24px;
+    margin-top: 17px;
+    transition: all 0.2s linear;
+}
+
+#menuBtnBrowser:hover:before {
+    margin-top: 6px;
+}
+
+#menuBtnRanked:before {
+    margin-top: 18px;
+    content: 'Ranked';
+    font-size: 24px;
+    transition: all 0.2s linear;
+}
+
+#menuBtnRanked:hover:before {
+    margin-top: 6px;
+}
+
+#inviteButton:before {
+    margin-top: 19px;
+    content: 'Invite';
+    font-size: 24px;
+    transition: all 0.2s linear;
+}
+
+#inviteButton:hover:before {
+    margin-top: 6px;
+}
+
+#menuBtnJoin:before {
+    margin-top: 19px;
+    content: 'Join';
+    font-size: 24px;
+    transition: all 0.2s linear;
+}
+
+#menuBtnJoin:hover:before {
+    margin-top: 6px;
+}
+
+/*japanese shit*/
+#menuBtnHost:after {
+    content: 'ホスト';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+}
+
+#menuBtnBrowser:after {
+    content: '鯖';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+}
+
+#menuBtnRanked:after {
+    content: 'ランク';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+}
+
+#inviteButton:after {
+    content: '招待';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+}
+
+#menuBtnJoin:after {
+    content: '参加';
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    position: relative;
+    bottom: 5px;
+}
+
+/*spectate*/
+#uiBase.onMenu #spectButton {
+    width: 48px;
+    bottom: unset;
+    top: -0.502em;
+    right: unset;
+    left: 230px;
+}
+
+#spectButton span[style="font-size:15px;color:rgba(255,255,255,0.6)"] {
+    color: transparent !important;
+}
+
+#spectButton .switchsml {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.sliderSml:before {
+    content: "visibility_off";
+    font-size: 32px;
+    color: white;
+    background-color: transparent;
+    transition-duration: 0.25s;
+    font-family: 'Material Icons';
+    position: relative !important;
+    left: 33px !important;
+    top: 22px;
+}
+
+input:checked+.sliderSml:before {
+    content: "visibility";
+    transform: unset;
+}
+
+input:checked+.sliderSml {
+    background: var(--accent)
+}
+
+.sliderSml {
+    opacity: 1;
+    height: 70px;
+    width: 100px;
+    border: 4px solid #fff;
+    border-left: none;
+    border-top: none;
+    background: var(--bgg);
+    border-radius: 0;
+}
+
+/*customize*/
+#txtBubble {
+    display: none;
+}
+
+#menuClassNameTag {
+    display: none
+}
+
+#bubbleContainer {
+    display: none
+}
+
+#menuClassName {
+    text-shadow: none;
+    text-align: left;
+    width: 250px;
+}
+
+#menuClassSubtext {
+    text-shadow: none;
+    text-align: left;
+    width: 250px;
+    position: relative;
+    top: 55px;
+}
+
+.buttonG {
+    background-color: unset!important
+}
+
+#customizeButton {
+    font-size: 0 !important;
+    border: 3px solid #fff !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    background: var(--bgg2);
+    border-radius: 0;
+    top: -50px;
+    right: 10px;
+    width: 280px;
+}
+
+#customizeButton:hover {
+    transform: none;
+    background-color: unset!important
+}
+
+#customizeButton .material-icons {
+    display: none
+}
+
+#menuClassContainer {
+    top: unset;
+    bottom: -85px;
+    right: unset;
+    left: -200px!important;
+}
+
+#classPreviewCanvas {
+    margin-bottom: -58px;
+    margin-left: 50px;
+    opacity: 0;
+    transition-duration: 0.35s;
+    transform: rotateY(180deg);
+    position: relative;
+    right: 65px;
+    bottom: 15px;
+}
+
+#menuClassContainer:hover> #classPreviewCanvas {
+    opacity: .8;
+}
+
+/*actual customize window*/
+#selectorContainer {
+    background-color: #333;
+}
+
+.selectorItem, .custContainer {
+    background-color: #00000040;
+    border-style: solid;
+    border-color: var(--accent);
+}
+
+.selectorItem:hover, .custContainer:hover {
+    background-color: #00000040;
+}
+
+.selectedItem {
+    background: var(--accent) !important;
+}
+
+#itemSearchH {
+    background-color: #333;
+}
+
+.tooltip {
+    text-shadow: none;
+}
+
+.tooltipSub[style='font-size:10px'] {
+    text-transform: lowercase;
+}
+
+/*skin cards*/
+.skinCard, .noBtnCard, .skinCard.blackShad {
+    border-radius: 8px;
+    border-width: 0 !important;
+    background-color: rgba(15,15,15,0.15);
+    transition: all 0.5s ease;
+}
+
+[style="color:#292929;border:5px solid#292929"] {
+    color: var(--accent) !important;
+}
+
+.skinImg, .skinImgC {
+    position: relative;
+    top: 25px;
+    filter: grayscale(1) brightness(1);
+}
+
+.skinCard:hover, .skinCard.blackShad:hover, .noBtnCard.blackShad:hover {
+    color: #fff !important;
+    background-color: rgba(15,15,15,0.15);
+}
+
+.skinCard:hover img {
+    filter: grayscale(0);
+}
+
+.selctFavBtn.material-icons:after {
+    position: relative !important;
+    bottom: 3px !important;
+}
+
+.selctInfoBtn, .itemCnt::after {
+    background-color: var(--accent) !important;
+}
+
+.skinRandom.blackShad {
+    pointer-events: none;
+}
+
+.skinCard.blackShad {
+    text-shadow: none;
+}
+
+.itemSea, .itemOwn {
+    font-size: 0;
+}
+
+.sprayImg {
+    margin-left: 20px;
+    filter: grayscale(1);
+}
+
+.noBtnCard {
+    width: 145px;
+}
+
+.noBtnCard:hover:after {
+    height: 100%;
+}
+
+.noBtnCard:hover>.sprayImg {
+    filter: grayscale(0);
+}
+
+#slid_scopeBorderCol {
+    border-color: var(--accent);
+}
+
+/*class card*/
+.classCard {
+    background-color: rgba(0,0,0,0.4);
+    text-shadow: none;
+    border-radius: 8px;
+    height: 260px;
+    line-height: 20px;
+    font-size: 0;
+    transition: all 0.5s ease;
+}
+
+.classCard img {
+    filter: brightness(1) grayscale(1);
+}
+
+.classCard:hover {
+    height: 180px;
+    font-size: 28px;
+    transform: translateY(45px);
+}
+
+.classWeap {
+    font-size: 0;
+    height: 0;
+}
+
+.classImgC {
+    margin-top: 12px;
+    transition-duration: 0.25s;
+}
+
+.classCard:hover img {
+    opacity: unset;
+    transform: unset;
+    filter: grayscale(0);
+}
+
+.classXPBar {
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.25);
+    height: 5px;
+}
+
+.clsXPBarC {
+    border-radius: 10px;
+    background-color: var(--accent);
+    height: 5px;
+}
+
+/*kpd*/
+#policeButton {
+    position: fixed;
+    bottom: 48px;
+    left: 580px;
+    border: 3px solid #fff !important;
+    border-bottom: none !important;
+    background: var(--bgg2);
+    border-radius: 0;
+}
+
+/*chat*/
+#uiBase.onMenu #chatHolder {
+    position: fixed;
+    bottom: 10px;
+    left: calc(50% - 160px);
+}
+
+#uiBase.onMenu #chatList::-webkit-scrollbar {
+    display: none;
+}
+
+#uiBase.onMenu #chatSwitch:after {
+    display: none;
+}
+
+#uiBase.onMenu #chatInputHolder {
+    background: var(--altbg);
+    border: 3px solid var(--accent);
+}
+
+#uiBase.onMenu #chatInput {
+    margin-left: -22%;
+    background: transparent;
+    border: none;
+}
+
+#uiBase.onMenu #chatList {
+    background: var(--bgg);
+    border: 3px solid transparent;
+    border-image: var(--bgg) 1;
+    border-top: none;
+}
+
+/*terms*/
+#termsInfo:before {
+    content: '←';
+    font-size: 26px;
+    color: #fff;
+    position: relative;
+    left: 15px;
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#termsInfo:hover:before {
+    transform: rotateY(180deg) translateX(20px)
+}
+
+#termsInfo {
+    background: var(--bgg2);
+    height: 32.5px;
+    border: 3px solid #fff;
+    border-bottom: none;
+    position: relative;
+    bottom: 2px;
+    padding: 15px;
+    padding-left: 0;
+    padding-top: 10px;
+    border-radius: 0;
+    margin: 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+#termsInfo:hover {
+    padding-left: 15px !important;
+}
+
+.terms {
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.terms:hover {
+    transform: scale(0.9);
+}
+
+.verticalSeparatorInline {
+    opacity: 0;
+    height: 25px;
+    background: #fff !important;
+    border: none;
+    width: 2px;
+    transform: none;
+    margin: 0;
+}
+
+#termsInfo:hover > .verticalSeparatorInline {
+    opacity: 1 !important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.terms {
+    font-size: 0;
+    transition-duration: 0.25s;
+}
+
+.terms:last-child {
+    font-size: 20px;
+}
+
+#termsInfo:hover .terms {
+    font-size: 20px;
+}
+
+/*shop*/
+.shopCard {
+    transition: font-size 0.25s ease;
+    text-align: start;
+    border-radius: 9px;
+    filter: grayscale(1);
+}
+
+.spinValH {
+    font-size: 0;
+}
+
+.shopCard:hover {
+    filter: grayscale(0)
+}
+
+.shopCard:hover .spinValH {
+    font-size: 22px;
+    filter: none;
+}
+
+.spinValH {
+    text-align: start;
+    font-size: 0px;
+    background: transparent;
+    position: absolute;
+    bottom: -80px;
+    text-indent: 55px;
+    transition-duration: 0.25s;
+}
+
+#limitedBarProg {
+    background-color: var(--accent);
+}
+
+/*challenges*/
+.chalCard {
+    text-shadow: none;
+}
+
+.chalXPVal {
+    padding: 0;
+    border-radius: 12px;
+    background-color: rgba(255,255,255,0.15);
+}
+
+.chalXPBarC {
+    border-radius: 12px;
+    background: var(--accent) !important;
+}
+
+.chalImgC {
+    background-color: transparent;
+    filter: grayscale(1) brightness(2) drop-shadow(0px 0px 2px var(--accent)) drop-shadow(0px 0px 4px var(--accent));
+}
+
+.challHeadrI {
+    background-color: var(--bg);
+}
+
+.material-icons[style*='font-size:110px;color:#38cd3a;'], .chalRewV span[style*='color:#fbc02d'], .material-icons[style*='color:#cc51f8;font-size:29px;vertical-align:top;'] {
+    color: var(--accent) !important;
+}
+
+.challMapCrd, .challRotImg {
+    filter: grayscale(1);
+    transition: all 0.2s linear;
+}
+
+.challMapCrd:hover, .challRotImg:hover {
+    filter: grayscale(0)
+}
+
+/*maps and mods*/
+/*new mod thing*/
+.mapAgeD {
+    background-color: #0000 !important;
+    font-size: 0;
+    visibility: hidden;
+    transform: translate(-455px,0px)
+}
+
+.mapAgeD:after {
+    visibility: visible;
+    content: '';
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    background-color: red;
+    clip-path: polygon(100% 0%, 0 0, 0 100%);
+}
+
+.mapAgeD:before {
+    visibility: visible;
+    content: 'New';
+    font-size: 28px;
+    position: absolute;
+    top: 0px;
+    left: 7px;
+    z-index: 3;
+    transform: rotate(-45deg) !important;
+}
+
+.bigMenTab[onclick*='windows[3].switchTab(0)']:after, .bigMenTab[onclick*='windows[9].switchTab(0)']:after, .bigMenTab[onclick*='windows[13].switchTab(0)']:after {
+    content: 'home';
+    font-family: 'material-icons';
+    font-size: 42px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10px;
+}
+
+a {
+    color: var(--accent);
+}
+
+span [style='color:rgba(255,255,255,0.5)'] {
+    visibility: hidden;
+}
+
+span [style='color:rgba(255,255,255,0.5)']:after {
+    visibility: visible;
+    content: 'thumb_up';
+    font-family: 'material-icons';
+    color: var(--accent);
+    position: relative;
+    right: 24px;
+    top: 2px;
+}
+
+span[style='font-size:15px;text-align:right;padding-right:2px;float:right;color:#fff;'] {
+    letter-spacing: 2px;
+}
+
+div[style='margin-top:5px;padding-left:5px;padding-right:5px;line-height:30px;margin-bottom:0px;'] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Options/Settings*/
+#settingsTabLayout {
+    grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.serverHeader, .settingsHeader {
+    background-color: #2f2f2f;
+    position: sticky;
+}
+
+#settSearch {
+    color: #fff;
+    border-radius: 0;
+    background-color: transparent;
+    border-bottom: 4px solid var(--accent);
+}
+
+#settSearch::placeholder {
+    color: #fff;
+}
+
+#settingsPreset, .inputGrey2 {
+    color: #fff;
+}
+
+.settingTab, .tabANew {
+    border-color: var(--accent);
+    transition-duration: 0.25s;
+}
+
+.settingTab:hover, .tabANew:hover, .menuTabNew:hover {
+    border-color: var(--accent);
+    opacity: 0.75;
+}
+
+.settingsBtn, .loadoutBtn, .subPassChg, .lnkTw, .hostToggle, .hostPresetBtn {
+    background-color: var(--accent);
+    color: #fff;
+    border-radius: 16px;
+}
+
+.settingsBtn:hover, .loadoutBtn:hover, .subpassChg:hover, .lnkTw:hover, .hostToggle:hover, .hostPresetBtn:hover {
+    background-color: #fff;
+    color: var(--accent) !important;
+}
+
+.lnkTw {
+    color: var(--accent);
+}
+
+.inputGrey, .inputGrey2, .formInput {
+    background: rgba(255,255,255,0.15);
+    border-radius: 16px;
+}
+
+.smlInput {
+    color: #fff;
+}
+
+option {
+    background: #000;
+}
+
+.setHed {
+    border: 3px solid transparent;
+    border-image: var(--bgg) 1;
+}
+
+.plusOrMinus {
+    font-size: 36px !important;
+    margin-right: -4px !important;
+}
+
+.settName {
+    color: #fff !important;
+}
+
+#requiresRestart {
+    color: var(--accent);
+}
+
+#requiresRestart span {
+    color: var(--accent) !important;
+}
+
+#requiresRestart [style*="color: #eb5656"] {
+    color: var(--accent) !important;
+}
+
+.sliderM {
+    background: var(--bg);
+}
+
+.sliderM::-webkit-slider-thumb {
+    background-color: var(--accent)!important;
+    clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+
+.sliderVal {
+    background-color: rgba(255,255,255,0.15);
+    color: #fff;
+    border-radius: 16px;
+    letter-spacing: 3px;
+}
+
+.switch {
+    width: 70px;
+}
+
+.slider {
+    background: #414141;
+}
+
+.slider:before {
+    font-family: 'Material-Icons';
+    content: 'clear';
+    color: #414141;
+}
+
+.slider:after {
+    font-family: 'Material-Icons';
+    content: 'done';
+    position: relative;
+    top: 4px;
+    left: 43px;
+    color: #414141;
+}
+
+input:checked+.slider {
+    background-color: var(--accent);
+}
+
+input:checked+.slider:before {
+    transform: translateX(36px) rotate(360deg);
+    color: transparent;
+    box-shadow: inset 0 0 0 4px #fff;
+}
+
+input[type=color] {
+    width: 60px;
+    border: 3px solid #fff;
+}
+
+/*host*/
+.serverHostOp, .setHed {
+    border-image: linear-gradient(20deg, transparent, var(--altbg)) 1;
+}
+
+.hostMap {
+    border: none;
+    height: 94px;
+    width: 230px;
+}
+
+.hostMap:hover {
+    box-shadow: 0 0 8px 2px var(--accent);
+}
+
+.hostMapBy, .hostMapYear, .hostMapVersion {
+    display: none;
+}
+
+.hostMapName {
+    top: 50%;
+    left: 50%;
+    font-size: 24px;
+    width: 50%;
+    background-color: transparent;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.hostMapImg {
+    filter: grayscale(100%) brightness(0.75);
+    border-radius: 8px;
+    width: 230px;
+}
+
+.hostMap .blackShad {
+    text-shadow: none;
+}
+
+.hostOpt {
+    border: none;
+    border-radius: 24px;
+    background-color: transparent;
+    width: 210px;
+}
+
+.optName {
+    text-shadow: none;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.optCheck {
+    background-color: transparent;
+    border-radius: 24px;
+}
+
+.optCheck:hover {
+    background-color: var(--accent) !important;
+}
+
+.optCheck:hover>.optImg {
+    filter: grayscale(1);
+}
+
+input:hover+.optCheck {
+    background-color: var(--accent);
+    opacity: 0.25;
+}
+
+input:checked+.optCheck {
+    background: var(--accent) !important;
+    box-shadow: 0 0 2px 2px var(--accent);
+}
+
+#customSnameTeam1, #customSnameTeam2, #passCode, #rawMapData, #presetName, #presetSelect {
+    border-radius: 16px !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/*server browser*/
+.quickJoin {
+    background-color: var(--accent);
+    border: none;
+    color: var(--accent2) !important;
+}
+
+input:checked+.slider2 {
+    background-color: var(--accent);
+}
+
+input:checked+.slider2:before {
+    transform: translateX(16px) rotate(360deg);
+    color: transparent;
+    box-shadow: inset 0 0 0 4px #fff;
+}
+
+span[style='float:right;color:rgba(255,255,255,0.9)'] {
+    display: flex;
+    align-items: center;
+}
+
+span[style='color:rgba(255,255,255,0.6)'] {
+    visibility: collapse;
+}
+
+span[style='color:rgba(255,255,255,0.6)']:after {
+    visibility: visible;
+    content: 'public';
+    font-family: 'material-icons';
+    font-size: 32px;
+    color: #fff;
+    position: relative;
+    right: 15px;
+}
+
+.setBodH[style='padding:10px;margin-top:0px;margin-bottom:8px;width:calc(100% - 20px) !important;margin-left:0px;'] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setBodH[style='padding-top:10px;padding-bottom:10px;'] {
+    background: var(--bgg);
+}
+
+.setHed span[style='float:right;color:rgba(255,255,255,0.9)']:not(span[style='color:rgba(255,255,255,0.6)']) {
+    position: relative;
+    bottom: 5px;
+}
+
+#serverSearch {
+    background: var(--bg);
+}
+
+#serverSearch::placeholder {
+    color: #fff;
+}
+
+#hostMenuBtn {
+    background: var(--accent);
+}
+
+#hideFull span:not(.slider2) {
+    position: relative;
+    top: 5px;
+}
+
+.serverPCount {
+    font-size: 22px;
+}
+
+.serverPCount:after {
+    content: ' Players';
+}
+
+.serverPing {
+    position: relative;
+    bottom: 4px;
+    font-size: 0px !important;
+}
+
+.serverPing[style='color:rgb(255, 213, 66)!important;']:after {
+    content: 'Ping: Medium';
+    font-size: 24px;
+    font-family: gamefont;
+}
+
+.serverPing[style='color:rgb(255, 75, 66)!important;']:after {
+    content: 'Ping: Bad';
+    font-size: 24px;
+    font-family: gamefont;
+}
+
+.settNameIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+
+.settNameIn span[style='margin-top:-6px;color:#FBC02D;vertical-align:middle'] {
+    font-size: 0;
+}
+
+.settNameIn span[style='margin-top:-6px;color:#FBC02D;vertical-align:middle']:after {
+    font-size: 22px;
+    font-family: gamefont;
+    content: 'Promoted';
+}
+
+.krIcon {
+    font-size: 0;
+    background: transparent;
+}
+
+.krIcon:after {
+    content: 'KR Rewards Enabled';
+    font-size: 22px;
+}
+
+/*kpd page*/
+#policePopC {
+    background-color: var(--bg) !important;
+    color: var(--accent);
+}
+
+#policePopC > div {
+    color: var(--accent) !important;
+}
+
+.punishButton {
+    text-shadow: none;
+}
+
+.callRegion {
+    color: var(--accent);
+}
+
+.policeJoinB {
+    color: var(--accent) !important;
+    background-color: var(--background);
+    border-radius: 0;
+}
+
+.policeJoinB:hover {
+    color: var(--accent) !important;
+    opacity: 1;
+}
+
+/*Section 2: in game HUD*/
+#igXPBar {
+    display: none !important;
+}
+
+/*interaction*/
+#interactMsg span {
+    color: var(--accent) !important;
+}
+
+/*health*/
+#hudClassIcon {
+    image-rendering: crisp-edges;
+    background: transparent;
+    border-radius: 0;
+    position: fixed;
+    left: 25px;
+    bottom: 0;
+    margin: 5px;
+    transform: scale(0.95);
+    content: url(https://cdn.discordapp.com/attachments/798652989572120618/928485782497394698/download.jpeg);
+    filter: brightness(1.5) saturate(0.3)
+}
+
+#healthValueHolder {
+    background: var(--bgg2);
+    border-radius: 0;
+    padding: 40px;
+    padding-right: 315px;
+    padding-top: 25px;
+    display: flex;
+    position: relative;
+    top: 60px;
+    z-index: -69;
+    border: 2px solid #fff;
+    border-bottom: none;
+}
+
+#healthValue {
+    color: #fff;
+    font-size: 48px;
+    position: relative;
+    left: 95px;
+    bottom: 8px;
+}
+
+#healthValue:after {
+    content: '+';
+    font-size: 42px;
+    position: relative;
+    right: 3px;
+    bottom: 1px;
+}
+
+#maxHP, #challIcon {
+    display: none;
+}
+
+#healthBar {
+    display: inline-block;
+    z-index: 3;
+    height: 35px;
+    background-color: transparent !important;
+    position: fixed;
+    bottom: 8px;
+    left: 140px;
+    border: 1px solid #fff;
+}
+
+.healthBarSeg {
+    width: 50px;
+    display: inline-block;
+    border-radius: 0px;
+    margin-right: -1px;
+    height: 100%;
+    background-color: transparent !important;
+}
+
+.hpBSeg {
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 -10px 0 0 rgba(0,0,0,.28);
+    -moz-box-shadow: inset 0 -10px 0 0 rgba(0,0,0,.28);
+    box-shadow: inset 0 -10px 0 0 rgba(0,0,0,0);
+    background: var(--accent2) !important
+}
+
+/*ammo*/
+#bottomRight {
+    position: fixed;
+    bottom: 25px;
+}
+
+#ammoMax {
+    display: none;
+}
+
+#ammoDisplay {
+    margin: 0;
+    background: var(--bgg2) !important;
+    border: 2px solid #fff;
+    border-radius: 0;
+    display: flex !important;
+    position: relative;
+    top: 27px;
+}
+
+#ammoVal {
+    font-size: 48px;
+    color: #fff;
+    position: relative;
+    left: 20px;
+}
+
+#ammoIcon {
+    content: url(https://cdn.discordapp.com/attachments/798652989572120618/928819443793014814/penis.png);
+    image-rendering: crisp-edges;
+    position: relative;
+    left: 10px;
+    top: 4px;
+}
+
+#ammoVal:before {
+    content: 'AMMO: ';
+}
+
+#reloadMsg {
+    background: var(--accent);
+    color: var(--accent2);
+    font-size: 42px;
+    box-shadow: 0px 10px 0px var(--accent2);
+    border: 2px solid #000;
+    letter-spacing: 2px;
+}
+
+/*weapon display*/
+#weapDisplay {
+    position: fixed;
+    z-index: 69;
+    left: 255px;
+    bottom: 47px;
+    border-bottom: none;
+    border-radius: 6px;
+    width: 150px;
+    height: 50px;
+    background: transparent;
+    transform: none;
+}
+
+.weapItem {
+    position: absolute;
+}
+
+.weapIcon {
+    filter: grayscale(1) brightness(10) drop-shadow(-5px 5px 0px var(--accent2)) ;
+    opacity: 0 !important;
+    transition-duration: 0.25s;
+    height: 0;
+}
+
+.weapIcon[style*="1"] {
+    opacity: 1 !important;
+    height: 70px;
+}
+
+#weapIconMel {
+    margin: 0 !important;
+    position: relative;
+    top: 12px;
+    right: 5px;
+}
+
+.weapKey {
+    display: none;
+}
+
+/*counters and stuff*/
+.topRightCounters {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 105px;
+    right: 25px;
+    direction: rtl;
+}
+
+.countIcon {
+    background-color: transparent;
+    width: max-content;
+}
+
+#killsVal, #deathsVal, #streakVal, #kdVal, #myScoreVal, #livesDisp {
+    color: #fff!important;
+    font-size: 26px;
+}
+
+#killsVal:after {
+    content: ' :K';
+    color: #ffffff70;
+}
+
+#deathsVal:after {
+    content: ' :D';
+    color: #ffffff70;
+}
+
+#streakVal:after {
+    content: ' :S';
+    color: #ffffff70;
+}
+
+#kdVal:after {
+    content: ' :K/D';
+    color: #ffffff70;
+}
+
+#myScoreVal:after {
+    content: ' :P';
+    color: #ffffff70;
+}
+
+#livesDisp:after {
+    content: ' :L';
+    color: #ffffff70;
+}
+
+#killsIcon, #deathsIcon, #streakIcon, #kdIcon, #scoreCount .material-icons {
+    display: none;
+}
+
+.kfItem {
+    border-radius: 10px;
+    background-color: var(--ingame-bg-color);
+}
+
+#killStreakHolder {
+    position: fixed;
+    bottom: 75px;
+    right: 15px;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.killStreakItem {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
+
+/*timer*/
+.leftUIB {
+    background: var(--bgg) !important;
+    border-radius: 0 !important;
+    border-top: none;
+    border: 2px solid #fff;
+    position: fixed;
+    left: calc(50% - 50px);
+    top: -5px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#gameMessage {
+    position: relative;
+    top: 80px;
+}
+
+#timerDisplay {
+    width: 80px;
+    height: 60px;
+    will-change: unset;
+}
+
+#timerVal {
+    font-size: 45px;
+    color: #fff;
+}
+
+/*old leaderboard*/
+#leaderDisplay {
+    background: var(--bgg);
+    border-radius: 0;
+    border: 2px solid #fff;
+    position: relative;
+    bottom: 22px;
+}
+
+.newLeaderContainer {
+    background: var(--bgg);
+    border-radius: 0;
+    border: 2px solid #fff;
+}
+
+.leaderCounter, .leaderName span, .newLeaderCounter, #ingameTable td, #ingameTable th, .newLeaderName span {
+    color: #fff !important;
+}
+
+.leaderName, .newLeaderName {
+    color: var(--accent3);
+}
+
+.leaderItem img[src*='./img/ranked'] {
+    position: relative;
+    bottom: 3px;
+    right: 4px;
+}
+
+.leaderItem img[src='./img/ranked/rnk_0.svg'], .newLeaderItem img[src='./img/ranked/rnk_0.svg'] {
+    display: none;
+}
+
+/*team scores*/
+#teamScores {
+    visibility: hidden;
+}
+
+#tScoreV1 {
+    visibility: visible;
+    position: fixed;
+    color: #fff;
+    top: 0;
+    width: auto;
+    height: 40px;
+    background: var(--bgg);
+    text-align: center;
+    line-height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transform: translateX(calc(-50% - 160px));
+    left: 53%;
+    border: 1px solid #fff;
+    border-right: none;
+    border-top: none;
+    font-size: 26px;
+}
+
+#tScoreV2 {
+    visibility: visible;
+    position: fixed;
+    color: #fff;
+    top: 0;
+    width: auto;
+    height: 40px;
+    background: var(--bgg);
+    text-align: center;
+    line-height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transform: translateX(calc(-50% + 160px));
+    left: 47%;
+    border: 1px solid #fff;
+    border-left: none;
+    border-top: none;
+    font-size: 26px;
+}
+
+#roundsDisplay {
+    display: none !important;
+}
+
+/*fps and ping*/
+.debugInfo {
+    display: flex;
+    justify-content: space-between;
+    background: var(--bgg);
+    border: 2px solid #fff;
+    padding: 10px;
+    position: relative;
+    bottom: 22px;
+}
+
+#pingText, #ingameFPS, #fpsDisplay {
+    font-size: 23px !important;
+    color: #fff !important;
+    will-change: unset;
+}
+
+#fpsDisplay {
+    text-transform: lowercase;
+    margin-right: 10px;
+}
+
+#fpsDisplay:after {
+    content: '|'
+}
+
+#pingIcon {
+    display: none;
+}
+
+#pingText:after {
+    content: ' ms';
+}
+
+/*map/game info*/
+#curGameInfo {
+    position: relative;
+    bottom: 20px;
+}
+
+/*in game chat*/
+#chatList::-webkit-scrollbar {
+    display: none;
+}
+
+#chatSwitch:after {
+    display: none;
+}
+
+#chatInputHolder {
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+#chatInput {
+    margin-left: -22%;
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+#chatList {
+    background-color: transparent;
+}
+
+#uiBase.onCompMenu #chatHolder {
+    bottom: 150px !important;
+}
+
+/*end screen*/
+.teamTotalN0, .teamTotalN1, .teamWin1, .teamWin0 {
+    color: #fff;
+}
+
+.teamTotals {
+    background: var(--bgg)
+}
+
+#endTimer {
+    color: #000;
+    text-shadow: 2px 2px 0px var(--accent);
+}
+
+.endCard {
+    border-radius: 12px;
+    background: var(--bgg) !important;
+}
+
+.tabHeader {
+    background: var(--bg);
+}
+
+.tabHeader.selected {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.reportBut {
+    color: var(--accent);
+}
+
+/*more end table stuff*/
+#endTable span[style="color:#F8C55C"] {
+    color: var(--accent) !important;
+}
+
+.endTableN[style*="color:#eb5656"] {
+    color: var(--accent) !important;
+}
+
+.endtableN span {
+    font-size: 20px;
+}
+
+.endTableN {
+    font-size: 24px;
+}
+
+#endTable tbody tr th {
+    border-bottom: none;
+    font-size: 0 !important;
+}
+
+#endTable tbody tr th:after {
+    font-size: 20px
+}
+
+#endlb_rank:after {
+    content: "R";
+}
+
+#endlb_name:after {
+    content: "N";
+}
+
+#endlb_score:after {
+    content: "S";
+}
+
+#endlb_kills:after {
+    content: "K";
+}
+
+#endlb_deaths:after {
+    content: "D";
+}
+
+#endlb_objective:after {
+    content: "O";
+}
+
+#endlb_dmg:after {
+    content: "Dmg";
+}
+
+#endlb_caps:after {
+    content: 'Caps'
+}
+
+#endlb_reward:after {
+    content: "Rew";
+}
+
+.xpEndBarB {
+    background: #fff;
+}
+
+.xpEndBarB[style*='background-color: rgb(255, 255, 255); margin-left: -7px;'] {
+    background: var(--accent);
+}
+
+/*victory/defeat/draw images*/
+img[src="./img/vic.png"] {
+    content: url(https://cdn.discordapp.com/attachments/806698701447757855/861484516748165130/vic.png);
+}
+
+img[src="./img/dra.png"] {
+    content: url(https://cdn.discordapp.com/attachments/806698701447757855/861484518656311306/dra.png);
+}
+
+img[src="./img/def.png"] {
+    content: url(https://cdn.discordapp.com/attachments/806698701447757855/861484517058805800/def.png);
+}
